@@ -8,6 +8,7 @@ Insert the following documents into a `movies` collection
 > db.movies.insertOne({title:'Fight Club',writer:'Chuck Palahniuko',year:1999,actors:['Brad Pitt','Edward Norton']})
 
 > db.movies.find()
+
 { "_id" : ObjectId("60df0803d1fd6b476b03f0f6"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
 
 > db.movies.insertMany([{title:'Pulp Fiction',writer:'Quentin Tarantino',year:1994,actors:['John Travolta','Uma Thurman']},{title:'Inglorious Basterds',writer:'Quentin Tarantino',year:2009,actors:['Brad Pitt','Diane Kruger','Eli Roth']}])
