@@ -14,7 +14,7 @@ db.movies.insertMany([{title:'The Hobbit:The Desolation of Smaug',writer:'J.R.R.
 
 ## 1. Get All Documents
 db.movies.find()
-,,,
+'''
 { "_id" : ObjectId("60df0803d1fd6b476b03f0f6"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f7"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : 1994, "actors" : [ "John Travolta", "Uma Thurman" ] }
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f8"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : 2009, "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
@@ -23,27 +23,27 @@ db.movies.find()
 { "_id" : ObjectId("60df1a93d1fd6b476b03f103"), "title" : "The Hobbit:The Battle of Five Armies", "writer" : "J.R.R Tolkein", "year" : 2012, "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness." }
 { "_id" : ObjectId("60df1a93d1fd6b476b03f104"), "title" : "Pee Wee Herman's Big Adventure" }
 { "_id" : ObjectId("60df1a93d1fd6b476b03f105"), "title" : "Avatar" }
-,,,
+'''
 ## 2. Get all documents with writer set to “Quentin Tarantino”
 > db.movies.find({writer:"Quentin Tarantino"})
-,,,
+'''
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f7"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : 1994, "actors" : [ "John Travolta", "Uma Thurman" ] }
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f8"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : 2009, "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
-,,,
+'''
 
 ## 3. Get all documents where actors include “Brad Pitt”
 > db.movies.find({actors:"Brad Pitt"})
-,,,
+'''
 { "_id" : ObjectId("60df0803d1fd6b476b03f0f6"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f8"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : 2009, "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
-,,,
+'''
 ## 4. Get all documents with franchise “The Hobbit”
 > db.movies.find({franchise:"The Hobbit"})
-‘’’
+'''
 { "_id" : ObjectId("60df1087d1fd6b476b03f0f9"), "title" : "The Hobbit:An Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : 2012, "franchise" : "The Hobbit" }
 { "_id" : ObjectId("60df1a93d1fd6b476b03f102"), "title" : "The Hobbit:The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : 2013, "franchise" : "The Hobbit" }
 { "_id" : ObjectId("60df1a93d1fd6b476b03f103"), "title" : "The Hobbit:The Battle of Five Armies", "writer" : "J.R.R Tolkein", "year" : 2012, "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness." }
-,,,
+'''
 ## 5. Get all movies released in the 90s.
  db.movies.find({year:{$lt:2000}})
 ,,,
