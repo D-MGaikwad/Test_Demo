@@ -1,22 +1,20 @@
-#1st  Assignment:
-MongoDB Exercise in mongo shell
-> use mongo_practice
+# MongoDB Lab Assignments – Day 1 
+## MongoDB Exercise in mongo shell
+use mongo_practice
+## Insert Documents:
+Insert the following documents intoa movies collection.
 
-##Insert Documents:
-> db.movies.insertOne({title:'Fight Club',writer:'Chuck Palahniuko',year:1999,actors:['Brad Pitt','Edward Norton']})
+db.movies.insertOne({title:'Fight Club',writer:'Chuck Palahniuko',year:1999,actors:['Brad Pitt','Edward Norton']})
 
-> db.movies.find()
+ db.movies.insertMany([{title:'Pulp Fiction',writer:'Quentin Tarantino',year:1994,actors:['John Travolta','Uma Thurman']},{title:'Inglorious Basterds',writer:'Quentin Tarantino',year:2009,actors:['Brad Pitt','Diane Kruger','Eli Roth']}])
 
-{ "_id" : ObjectId("60df0803d1fd6b476b03f0f6"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
+db.movies.insertOne({title:'The Hobbit:An Unexpected Journey',writer:'J.R.R. Tolkein',year:2012,franchise:'The Hobbit'})
 
-> db.movies.insertMany([{title:'Pulp Fiction',writer:'Quentin Tarantino',year:1994,actors:['John Travolta','Uma Thurman']},{title:'Inglorious Basterds',writer:'Quentin Tarantino',year:2009,actors:['Brad Pitt','Diane Kruger','Eli Roth']}])
+db.movies.insertMany([{title:'The Hobbit:The Desolation of Smaug',writer:'J.R.R. Tolkein',year:2013,franchise:'The Hobbit'},{title:'The Hobbit:The Battle of Five Armies',writer:'J.R.R Tolkein',year:2012,franchise:'The Hobbit',synopsis:'Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness.'},{title:"Pee Wee Herman's Big Adventure"},{title:'Avatar'}])
 
-> db.movies.insertOne({title:'The Hobbit:An Unexpected Journey',writer:'J.R.R. Tolkein',year:2012,franchise:'The Hobbit'})
-
-> db.movies.insertMany([{title:'The Hobbit:The Desolation of Smaug',writer:'J.R.R. Tolkein',year:2013,franchise:'The Hobbit'},{title:'The Hobbit:The Battle of Five Armies',writer:'J.R.R Tolkein',year:2012,franchise:'The Hobbit',synopsis:'Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness.'},{title:"Pee Wee Herman's Big Adventure"},{title:'Avatar'}])
-
-##1. Get All Documents(Query)
-> db.movies.find()
+## 1. Get All Documents
+db.movies.find()
+,,,
 { "_id" : ObjectId("60df0803d1fd6b476b03f0f6"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f7"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : 1994, "actors" : [ "John Travolta", "Uma Thurman" ] }
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f8"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : 2009, "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
@@ -25,29 +23,33 @@ MongoDB Exercise in mongo shell
 { "_id" : ObjectId("60df1a93d1fd6b476b03f103"), "title" : "The Hobbit:The Battle of Five Armies", "writer" : "J.R.R Tolkein", "year" : 2012, "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness." }
 { "_id" : ObjectId("60df1a93d1fd6b476b03f104"), "title" : "Pee Wee Herman's Big Adventure" }
 { "_id" : ObjectId("60df1a93d1fd6b476b03f105"), "title" : "Avatar" }
-
-###2. Get all documents with writer set to “Quentin Tarantino”
+,,,
+## 2. Get all documents with writer set to “Quentin Tarantino”
 > db.movies.find({writer:"Quentin Tarantino"})
+,,,
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f7"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : 1994, "actors" : [ "John Travolta", "Uma Thurman" ] }
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f8"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : 2009, "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
+,,,
 
-###3. Get all documents where actors include “Brad Pitt”
+## 3. Get all documents where actors include “Brad Pitt”
 > db.movies.find({actors:"Brad Pitt"})
+,,,
 { "_id" : ObjectId("60df0803d1fd6b476b03f0f6"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f8"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : 2009, "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
-
-
-
-4. Get all documents with franchise “The Hobbit”
+,,,
+## 4. Get all documents with franchise “The Hobbit”
 > db.movies.find({franchise:"The Hobbit"})
+‘’’
 { "_id" : ObjectId("60df1087d1fd6b476b03f0f9"), "title" : "The Hobbit:An Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : 2012, "franchise" : "The Hobbit" }
 { "_id" : ObjectId("60df1a93d1fd6b476b03f102"), "title" : "The Hobbit:The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : 2013, "franchise" : "The Hobbit" }
 { "_id" : ObjectId("60df1a93d1fd6b476b03f103"), "title" : "The Hobbit:The Battle of Five Armies", "writer" : "J.R.R Tolkein", "year" : 2012, "franchise" : "The Hobbit", "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness." }
-
-5. Get all movies released in the 90s.
-> db.movies.find({year:{$lt:2000}})
+,,,
+## 5. Get all movies released in the 90s.
+ db.movies.find({year:{$lt:2000}})
+,,,
 { "_id" : ObjectId("60df0803d1fd6b476b03f0f6"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
 { "_id" : ObjectId("60df0d06d1fd6b476b03f0f7"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : 1994, "actors" : [ "John Travolta", "Uma Thurman" ] }
+,,,
 
 6. Get all movies released before the year 2000 or after 2010.
 
@@ -206,3 +208,5 @@ Querying related collections:
 > db.comments.find({post:ObjectId("60e005db94de16fe49e16757")})
 
 { "_id" : ObjectId("60e01ffd94de16fe49e1675f"), "username" : "ScumbagSteve", "comment" : "Denied your PR cause I found a hack", "post" : ObjectId("60e005db94de16fe49e16757") }
+
+
