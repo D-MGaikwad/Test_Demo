@@ -4,6 +4,7 @@
 > use mongo_practice
 
 ## Insert Documents:
+Insert the following documents into a `movies` collection
 > db.movies.insertOne({title:'Fight Club',writer:'Chuck Palahniuko',year:1999,actors:['Brad Pitt','Edward Norton']})
 
 > db.movies.find()
